@@ -3,7 +3,9 @@ function template(title, initialState = {}, content = ""){
   let scripts = ''; // Dynamically ship scripts based on render type
   if(content){
     scripts = ` <script>
-                   window.__STATE__ = ${JSON.stringify(initialState)}
+                  // 这里需要将服务的生成的state放到客户端为了同步数据
+                  // 这里的initialState是在/src/server文件中生成的
+                  window.__STATE__ = ${JSON.stringify(initialState)}
                 </script>
                 <script src="assets/client.js"></script>
                 `
