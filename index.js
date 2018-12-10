@@ -32,7 +32,9 @@ const ssr = require('./views/server');
 // server rendered home page
 // 服务的渲染首页
 app.get('/', (req, res) => {
+  // 生成组件静态html和state
   const { preloadedState, content}  = ssr(initialState)
+  // 返回给客户端html代码其中包括组件的html和state
   const response = template("Server Rendered Page", preloadedState, content)
   res.setHeader('Cache-Control', 'assets, max-age=604800')
   res.send(response);
