@@ -1,3 +1,12 @@
+## 安装
+
+`npm i`
+
+## 启动和编译
+
+`npm run build && npm run start`
+
+
 # React Server-Side Rendering Example
 
 Above is an example playground for you to play with React & Redux on Client and Server sides.
